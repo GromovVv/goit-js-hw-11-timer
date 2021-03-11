@@ -1,0 +1,59 @@
+html,body {
+  height: 100%;
+}
+body {
+  background: #0f3854;
+  background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+  background-size: 100%;
+}
+
+#timer-1 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  min-width: 600px;
+  padding: 10px 20px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 0 auto;
+  font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  .time {
+      letter-spacing: 0.05em;
+      padding: 5px 0;
+  }
+  .date {
+      letter-spacing: 0.1em;
+      font-size: 24px;
+  }
+  .text {
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      padding: 20px 0 0;
+  }
+}
+
+.field {
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.value {
+  display: block;
+  font-size: 40px;
+}
+.label {
+  display: block;
+  font-size: 20px;
+}
