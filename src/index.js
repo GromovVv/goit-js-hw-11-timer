@@ -1,23 +1,20 @@
 import './styles.scss';
 
-const refs = {
-    timer: document.querySelector('#timer-1'),
-    days: document.querySelector('[data-value="days"]'),
-    hours: document.querySelector('[data-value="hours"]'),
-    mins: document.querySelector('[data-value="mins"]'),
-    secs: document.querySelector('[data-value="secs"]')
-}
-
-
-
 class CountdownTimer {
 
-    constructor({ selector, targetDate }) {
-        this.selector = selector;
-        this.targetDate = targetDate;
+    constructor({ selector, targetDate, refs = {
+        days: document.querySelector('[data-value="days"]'),
+        hours: document.querySelector('[data-value="hours"]'),
+        mins: document.querySelector('[data-value="mins"]'),
+        secs: document.querySelector('[data-value="secs"]')
+    }}) 
+        {
+            this.selector = selector;
+            this.targetDate = targetDate;
+            this.refs = refs;
 
-        this.countDownTime();
-    }
+            this.countDownTime();
+        }
 
     countDownTime() {
         const DELAY = 1000;
@@ -44,10 +41,10 @@ class CountdownTimer {
     }
 
     updateTimer({ days, hours, mins, secs }) {
-        refs.days.textContent = days;
-        refs.hours.textContent = hours;
-        refs.mins.textContent = mins;
-        refs.secs.textContent = secs;    
+        this.refs.days.textContent = days;
+        this.refs.hours.textContent = hours;
+        this.refs.mins.textContent = mins;
+        this.refs.secs.textContent = secs;    
     }
 }
 
@@ -57,4 +54,4 @@ new CountdownTimer({
     targetDate: new Date('Nov 1, 2021'),
   });
 
-
+ 
