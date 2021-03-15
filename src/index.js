@@ -2,14 +2,13 @@ import './styles.scss';
 
 class CountdownTimer {
 
-    constructor({ selector, targetDate, refs = {
+    constructor({ targetDate, refs = {
         days: document.querySelector('[data-value="days"]'),
         hours: document.querySelector('[data-value="hours"]'),
         mins: document.querySelector('[data-value="mins"]'),
         secs: document.querySelector('[data-value="secs"]')
     }}) 
         {
-            this.selector = selector;
             this.targetDate = targetDate;
             this.refs = refs;
 
