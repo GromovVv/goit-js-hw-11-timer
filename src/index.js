@@ -1,16 +1,11 @@
 import './styles.scss';
 
 class CountdownTimer {
-
-    constructor({ targetDate, refs = {
-        days: document.querySelector('[data-value="days"]'),
-        hours: document.querySelector('[data-value="hours"]'),
-        mins: document.querySelector('[data-value="mins"]'),
-        secs: document.querySelector('[data-value="secs"]')
-    }}) 
+    // 
+    constructor({ selector, targetDate }) 
         {
+            this.selector = selector;
             this.targetDate = targetDate;
-            this.refs = refs;
 
             this.countDownTime();
         }
@@ -45,6 +40,19 @@ class CountdownTimer {
         this.refs.mins.textContent = mins;
         this.refs.secs.textContent = secs;    
     }
+
+    updateTimer({ days, hours, mins, secs }) {
+        const refs = {
+        days: document.querySelector(`${this.selector} > .field > [data-value="days"]`),
+        hours: document.querySelector(`${this.selector} > .field > [data-value="hours"]`),
+        mins: document.querySelector(`${this.selector} > .field > [data-value="mins"]`),
+        secs: document.querySelector(`${this.selector} > .field > [data-value="secs"]`),
+        };
+        refs.days.textContent = days;
+        refs.hours.textContent = hours;
+        refs.mins.textContent = mins;
+        refs.secs.textContent = secs;
+        }
 }
 
 
@@ -52,5 +60,6 @@ new CountdownTimer({
     selector: '#timer-1',
     targetDate: new Date('Nov 1, 2021'),
   });
+
 
  
